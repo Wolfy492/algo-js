@@ -26,4 +26,24 @@ class Pokemon {
 let tortank = new Pokemon('Tortank', 15, 5, 30 ,75);
 let rattata = new Pokemon('Rattata', 10, 3, 30 ,50);
 
-tortank.attackPokemon(rattata)
+while (tortank.hp > 0) {
+  if (rattata.hp>0){
+    tortank.attackPokemon(rattata);
+    rattata.attackPokemon(tortank);
+  }else{
+    break
+  }
+}
+
+let win = "";
+let loose = "";
+if (tortank.hp < 0) {
+  winner = "Tortank";
+  looser = "Rattata";
+} else {
+  winner = "Rattata";
+  looser = "Tortank";
+}
+
+// Resultat
+console.log(`${loose} est mort, ${win} l'a battu!`);
